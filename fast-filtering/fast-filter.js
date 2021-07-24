@@ -24,4 +24,22 @@ const $$ = s => document.querySelectorAll(s);
             list.push(item);
         }
     }
+
+    const generateCountMessage = () => {
+        let msg = '',
+        matches = filteredList.length;
+        switch (true){
+            case (matches === 0):
+                msg = 'No matches found';
+                break;
+            case (matches === 1):
+                msg = 'Showing 1 item';
+                break;
+            case (matches <= maxDisplayLimit):
+                msg = `Showing ${matches} items`;
+                break;
+            default:
+                msg = `Showing ${maxDisplayLimit} of ${matches} items`;
+        }
+    }
 });
