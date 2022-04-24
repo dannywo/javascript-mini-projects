@@ -84,12 +84,14 @@ const textMatch = (item) => {
     return itemText.indexOf(searchTerm) !== -1;
 };
 
+
+// Improve this part, usind a data structure/algorithm
 const getFilteredItems = () => {
-    filteredList = list.filter(textMatch);;
+    filteredList = list.filter(textMatch);
     gernerateList();
 };
 
 textInput.addEventListener('keyup', getFilteredItems);
 
-generateDummyList(100);
+generateDummyList(1000000);
 getFilteredItems();
